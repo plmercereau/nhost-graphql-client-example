@@ -1,3 +1,29 @@
 table:
   name: todos
   schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      columns:
+        - id
+        - contents
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - contents
+        - id
+      filter: {}
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - contents
+        - id
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: user
+    permission:
+      filter: {}
