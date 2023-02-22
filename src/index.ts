@@ -4,7 +4,7 @@ import schema from './schema'
 
 const nhost = new NhostClient({ schema, subdomain: 'localhost' })
 
-nhost.graphql.query.users({ select: { locale: true } })
+nhost.graphql.query.users({ select: { locale: true, isAnonymous: true } })
 
 nhost.graphql.mutation.insertUsers({
     variables: { objects: [{ locale: 'en' }] },
